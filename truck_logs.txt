@@ -1,0 +1,5 @@
+[2025-09-13 00:27:48]
+Garbage Truck Notification:
+                Truck Number: UP32AB1234
+                Estimated Time of Arrival: 11:00
+==================================================
