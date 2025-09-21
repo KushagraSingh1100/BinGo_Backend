@@ -52,6 +52,16 @@ async def get_courses_by_reward():
         for course in courses
     ]
     return CourseListResponse(courses=courses_summaries)
+
+@router.get("/{course_id}", response_model = Course)
+async def get_course_by_id(course_id: str):
+    """ Get a specific course by ID"""
+
+    course = await Course.get_course_by_id(course_id)
+    if not course:
+        raise HTTPException(status_code=404, detail="Course not found")
+    return course
+
 @router.get("/questions", response_model = CourseListResponse)
 async def get_courses_by_question():
     """ Get all the courses sorted by question """
